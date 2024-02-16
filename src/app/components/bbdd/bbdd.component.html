@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="RegisterTittleGeneral">
+  <h1>Consulta de BBDD</h1>
+</div>
+<div class="RegisterTittleGeneral">
+  <p>Haz click sobre cualquiera de las siguientes tarjetas para visualizar su CV completo.</p>
+</div>
+<div id="BodyBBDDGeneral">
+  <div class="TarjetaCVResumen" (click)="verDetallesCV(usuario.id)" id="{{ usuario.dni }}" *ngFor="let usuario of usuarios">
+    <div id="TituloTarjeta">
+      {{ usuario.nombre }} {{ usuario.apellido }} - DNI: {{ usuario.dni }}
+    </div>
+    <div id="DatosBasicosTarjeta">
+      <div id="EdadCV">
+        <p>Edad: {{ usuario.edad }}</p>
+      </div>
+      <div id="SexoCV">
+        <p>Género: {{ usuario.genero }}</p>
+      </div>
+      <div id="DisponibilidadCV">
+        <p>Disponibilidad: {{ usuario.disponibilidadhoraria }}</p>
+      </div>
+    </div>
+    <div id="Titulos">
+      <p>
+        {{ usuario.titulosuperior }}
+      </p>
+    </div>
+    <div id="ResumenTarjeta">
+      <p>
+        {{ usuario.miresumen }}
+      </p>
+    </div>
+    <div id="FechaCarga">
+      <p>
+        ID: {{ usuario.id }}
+      </p>
+      <p>
+        Fecha de carga: {{ usuario.fechacarga }}
+      </p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

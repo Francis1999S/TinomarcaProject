@@ -1,0 +1,178 @@
+<app-header></app-header>
+<section id="GeneralCVbox" *ngIf="cvData">
+  <div class="RegisterTittleGeneral">
+    <h1>Visualización de CV</h1>
+  </div>
+  <div class="CV-BOX-01-01">
+    <div class="CV-BOX-02-01">
+      <div class="CV-BOX-02-02">
+        <P>Fecha de Carga: {{ cvData.fechacarga }}</P>
+        <p>ID: {{ cvData.id}}</p>
+      </div>
+      <div class="CV-BOX-02-03">
+        <div class="CV-BOX-02-03-01">
+          <h2>Contacto</h2>
+        </div>
+        <div class="CV-BOX-02-03-02">
+          <ul>
+            <li><strong>Domicilio: </strong>{{ cvData.domicilio}}</li>
+            <li><strong>Teléfono: </strong>{{ cvData.telefono}}</li>
+            <li><strong>E-mail: </strong>{{ cvData.email}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="CV-BOX-02-04">
+        <div class="CV-BOX-02-04-01">
+          <h2>Skills</h2>
+        </div>
+        <div class="CV-BOX-02-04-02">
+          <ul>
+            <p>Habilidades Blandas</p>
+            <li>{{ cvData.habilidadblanda1}}</li>
+            <li>{{ cvData.habilidadblanda2}}</li>
+            <li>{{ cvData.habilidadblanda3}}</li>
+            <li>{{ cvData.habilidadblanda4}}</li>
+            <li>{{ cvData.habilidadblanda5}}</li>
+            <p>Habilidades Técnicas</p>
+            <li>{{ cvData.habilidadtecnica1}}</li>
+            <li>{{ cvData.habilidadtecnica2}}</li>
+            <li>{{ cvData.habilidadtecnica3}}</li>
+            <li>{{ cvData.habilidadtecnica4}}</li>
+            <li>{{ cvData.habilidadtecnica5}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="CV-BOX-03-01">
+      <div class="CV-BOX-03-02">
+        <H1>{{ cvData.nombre }} {{ cvData.apellido }} - DNI: {{ cvData.dni }}</H1>
+      </div>
+      <div class="CV-BOX-03-03">
+        <div class="CV-BOX-03-03-01">
+          <p>Resumen:</p>
+        </div>
+        <div class="CV-BOX-03-03-02">
+          <p>{{ cvData.miresumen }}</p>
+        </div>
+      </div>
+      <div class="CV-BOX-03-04">
+        <div class="CV-BOX-03-04-01">
+          <p>Datos Básicos:</p>
+        </div>
+        <div class="CV-BOX-03-04-02">
+          <div class="CV-BOX-03-04-02-01">
+            <ul>
+              <li>Edad Actual: {{ cvData.edad}} Años</li>
+              <li>Género: {{ cvData.genero}}</li>
+              <li>Estado Civil: {{ cvData.estadocivil}}</li>
+              <li>Residencia Actual: {{ cvData.residencia}}</li>
+            </ul>
+          </div>
+          <div class="CV-BOX-03-04-02-02">
+            <ul>
+
+              <li>Disponibilidad Horaria: {{ cvData.disponibilidadhoraria}}</li>
+              <li>{{ cvData.carnet}}</li>
+              <li>Disponibilidad para Viajar: {{ cvData.dispviajar}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="CV-BOX-03-05">
+        <div class="CV-BOX-03-05-01">
+          <p>Datos Académicos:</p>
+        </div>
+        <div class="CV-BOX-03-05-02">
+          <div class="CV-BOX-03-05-02-01">
+            <ul>
+              <li>Nivel de Formación: {{ cvData.niveleducacion}}</li>
+              <li>Título Secundario: {{ cvData.titulosecundario}}</li>
+              <li>Institución Secundaria: {{ cvData.institucionsecundaria}}</li>
+              <li>Egreso de Secundario: {{ cvData.fechafinsecundaria}}</li>
+            </ul>
+          </div>
+          <div class="CV-BOX-03-05-02-02">
+            <ul>
+
+              <li>Título Superior/Universitario: {{ cvData.titulosuperior}}</li>
+              <li>Institución Superior/Universitaria: {{ cvData.institucionsuperior}}</li>
+              <li>Finalización Superior/Universitaria: {{ cvData.fechafinuniversidad}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="CV-BOX-03-05-03">
+          <div class="CV-BOX-03-05-03-01">
+            <p>Cursos y/o Especialidades:</p>
+          </div>
+          <div class="CV-BOX-03-05-03-02">
+            <p>{{ cvData.especialidades }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="CV-BOX-03-06">
+        <div class="CV-BOX-03-06-01">
+          <p>Idiomas:</p>
+        </div>
+        <div class="CV-BOX-03-06-02">
+          <ul>
+            <li>Idioma/Segunda lengua: {{ cvData.idiomas }}</li>
+            <li>Nivel de dominio: {{ cvData.nivelidioma }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="CV-BOX-03-07">
+        <div class="CV-BOX-03-07-01">
+          <p>Historial Laboral:</p>
+        </div>
+        <div class="CV-BOX-03-07-02">
+          <div class="CV-BOX-03-07-02-01">
+            <div class="Empresa">
+              <p>{{ cvData.empresa1 }}</p>
+            </div>
+            <div class="Descripcion">
+              <p>Descripción: {{ cvData.descripcion1 }}</p>
+            </div>
+            <div class="FechaInicio">
+              <p>Fecha de Inicio: {{ cvData.fechainicio1 }}</p>
+            </div>
+            <div class="FechaFin">
+              <p>Fecha de Fin: {{ cvData.fechafin1 }}</p>
+            </div>
+          </div>
+          <div class="CV-BOX-03-07-02-02">
+            <div class="Empresa">
+              <p>{{ cvData.empresa2 }}</p>
+            </div>
+            <div class="Descripcion">
+              <p>Descripción: {{ cvData.descripcion2 }}</p>
+            </div>
+            <div class="FechaInicio">
+              <p>Fecha de Inicio: {{ cvData.fechainicio2 }}</p>
+            </div>
+            <div class="FechaFin">
+              <p>Fecha de Fin: {{ cvData.fechafin2 }}</p>
+            </div>
+          </div>
+          <div class="CV-BOX-03-07-02-03">
+            <div class="Empresa">
+              <p>{{ cvData.empresa3 }}</p>
+            </div>
+            <div class="Descripcion">
+              <p>Descripción: {{ cvData.descripcion3 }}</p>
+            </div>
+            <div class="FechaInicio">
+              <p>Fecha de Inicio: {{ cvData.fechainicio3 }}</p>
+            </div>
+            <div class="FechaFin">
+              <p>Fecha de Fin: {{ cvData.fechafin3 }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="CV-BOX-03-08">
+        <h3>Descargar CV Anexo</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,688 @@
+#GeneralCVbox{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.RegisterTittleGeneral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 10vh;
+    width: 100%;
+    border-bottom: 1px solid rgb(172, 172, 172);
+  }
+      /*--------------BOX-01----------------*/
+  .CV-BOX-01-01 {
+    margin: 2% 0 2% 0;
+    padding: 0;
+    width: 70%;
+    height: 180vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgb(17, 17, 17);
+  }
+
+ 
+    /*--------------BOX-02----------------*/
+    .CV-BOX-02-01 {
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(66, 144, 223);
+      }
+  .CV-BOX-02-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(14, 62, 110);
+    p {
+        margin: 0;
+        padding: 0 0 0 10%;
+        text-align: left;
+        width: 100%;
+        color: white;
+        font-size: 1vw;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+  }
+  .CV-BOX-02-03 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+.CV-BOX-02-03-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 2px solid rgb(14, 62, 110);
+}
+.CV-BOX-02-03-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    ul {
+        margin: 0;
+    padding: 0 0 0 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+
+    }
+    li {
+        font-weight: lighter;
+        font-size: 0.9vw;
+    }
+}
+
+  .CV-BOX-02-04 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .CV-BOX-02-04-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 2px solid rgb(14, 62, 110);
+}
+.CV-BOX-02-04-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    ul {
+        margin: 0;
+    padding: 0 0 0 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    }
+    li {
+        font-weight: lighter;
+        font-size: 0.9vw;
+    }
+    p {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: start;
+        font-weight: 600;
+    }
+}
+  /*--------------BOX-03----------------*/
+  .CV-BOX-03-01 {
+    margin: 0;
+    padding: 0;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
+  }
+  .CV-BOX-03-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(21, 97, 172);
+    h1 {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5vw;
+        color: white;
+    }
+  }
+  .CV-BOX-03-03 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(14, 62, 110);
+  }
+.CV-BOX-03-03-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        color: rgb(10, 48, 85);
+        width: 100%;
+        margin: 0;
+        padding: 1% 0 0 2%;
+        text-align: start;
+        font-weight: 600;
+        font-size: 1vw;
+    }
+}
+.CV-BOX-03-03-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        width: 100%;
+        margin: 0;
+        padding: 2% 0 0 2%;
+        text-align: start;
+        font-size: 1vw;
+    }
+}
+
+  .CV-BOX-03-04 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(14, 62, 110);
+  }
+  .CV-BOX-03-04-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        color: rgb(10, 48, 85);
+        width: 100%;
+        margin: 0;
+        padding: 1% 0 0 2%;
+        text-align: start;
+        font-weight: 600;
+        font-size: 1vw;
+    }
+}
+.CV-BOX-03-04-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    ul {
+        font-size: 1vw;
+    }
+}
+.CV-BOX-03-04-02-01 {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    ul {
+        padding: 0 0 0 8%;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    
+}
+.CV-BOX-03-04-02-02 {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    ul {
+        padding: 0 0 0 5%;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    li {
+        margin: 0 3%;
+        padding: 0;
+        width: 97%;
+        text-wrap: wrap;
+    }
+}
+
+  .CV-BOX-03-05 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 2px solid rgb(14, 62, 110);
+  }
+  .CV-BOX-03-05-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        color: rgb(10, 48, 85);
+        width: 100%;
+        margin: 0;
+        padding: 1% 0 0 2%;
+        text-align: start;
+        font-weight: 600;
+        font-size: 1vw;
+    }
+}
+.CV-BOX-03-05-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 63%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    ul {
+        font-size: 1vw;
+    }
+}
+.CV-BOX-03-05-02-01 {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    overflow: hidden;
+    ul {
+        padding: 0 0 0 8%;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    li {
+      margin: 0 5%;
+      padding: 0;
+      width: 95%;
+      text-wrap: wrap;
+  }
+}
+.CV-BOX-03-05-02-02 {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    overflow: hidden;
+    text-wrap: wrap;
+    ul {
+        padding: 0 0 0 5%;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    li {
+        margin: 0 3%;
+        padding: 0;
+        width: 97%;
+        text-wrap: wrap;
+    }
+}
+.CV-BOX-03-05-03 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.CV-BOX-03-05-03-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        width: 100%;
+        margin: 0;
+        padding: 1% 0 0 2%;
+        text-align: start;
+        font-weight: 600;
+        font-size: 0.8vw;
+    }
+}
+.CV-BOX-03-05-03-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        width: 100%;
+        margin: 0;
+        padding: 2% 0 0 2%;
+        text-align: start;
+        font-size: 0.8vw;
+    }
+}
+
+  .CV-BOX-03-06 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(14, 62, 110);
+  }
+  .CV-BOX-03-06-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    p {
+        width: 100%;
+        margin: 0;
+        padding: 1% 0 0 2%;
+        text-align: start;
+        font-weight: 600;
+        font-size: 0.8vw;
+    }
+}
+.CV-BOX-03-06-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    li {
+        width: 100%;
+        margin: 0;
+        padding: 2% 0 0 2%;
+        text-align: start;
+        font-size: 0.8vw;
+    }
+}
+
+  .CV-BOX-03-07 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(14, 62, 110);
+  }
+  .CV-BOX-03-07-01 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 2px solid rgb(14, 62, 110);
+    p {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 1% 0 0 2%;
+        text-align: start;
+        font-weight: 600;
+        font-size: 1vw;
+        color: rgb(10, 48, 85);
+    }
+    
+  }
+  .CV-BOX-03-07-02 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .CV-BOX-03-07-02-01 {
+    margin: 0;
+    padding: 0;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .CV-BOX-03-07-02-02 {
+    margin: 0;
+    padding: 0;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid rgb(14, 62, 110);
+  }
+  .CV-BOX-03-07-02-03 {
+    margin: 0;
+    padding: 0;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid rgb(14, 62, 110);
+  }
+
+  .CV-BOX-03-08 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Empresa {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    border-bottom: 1px solid rgb(14, 62, 110);
+    p {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0;
+        padding: 0 0 0 1%;
+        width: 100%;
+        height: 100%;
+        font-size: 0.8vw;
+        font-weight: 600;
+    }
+  }
+  .Descripcion {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    border-bottom: 1px solid rgb(14, 62, 110);
+    p {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin: 0;
+        padding: 0 0 0 1%;
+        width: 100%;
+        height: 100%;
+        font-size: 0.8vw;
+    }
+  }
+  .FechaInicio {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    border-bottom: 1px solid rgb(14, 62, 110);
+    p {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0;
+        padding: 0 0 0 1%;
+        width: 100%;
+        height: 100%;
+        font-size: 0.8vw;
+    }
+  }
+  .FechaFin {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    p {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0;
+        padding: 0 0 0 1%;
+        width: 100%;
+        height: 100%;
+        font-size: 0.8vw;
+    }
+  }

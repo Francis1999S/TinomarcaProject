@@ -1,0 +1,748 @@
+<app-header></app-header>
+<div class="RegisterContainer1">
+  <div id="VentanaErrorCVCreate">
+    <a class="CloseBtnError" onclick="CerrarVentanaError()"><h1 class="X-Btn">&times;</h1></a>
+
+    <h1 id="TittleErrorWindowCVCreate">Formulario Inválido</h1>
+    <br>
+    <p id="ErrorSugestCVCreate">Por favor, asegúrese de que ha completado correctamente los campos marcados como <strong>Obligatorios</strong> (*).</p>
+  <br>
+  <p id="ErrorMensajeCV"></p>
+  <p id="ErrorMensajeCV2"></p>
+  <br>
+  <button
+    id="RegisterBtnFinal"
+    type="submit"
+    [disabled]="!registerForm.valid"
+    (click)="onSubmit()"
+    (click)="navigateToResults()"
+    onclick="GoStart()"
+    >
+    <p>Crear CV y Publicar</p>
+  </button>
+  </div>
+  <div class="RegisterTittleGeneral-001">
+    <h1>Creación y Publicación de CV</h1>
+  </div>
+  <div class="RegisterTittleGeneral">
+    <p>Los Campos con (<strong style="color: red;">*</strong>) son Obligatorios</p>
+  </div>
+  <div class="RegisterContainer2">
+    <div class="VentanaRegistro">
+      <div class="RegisterTittle"><h1>Datos Básicos [1/5]</h1></div>
+      <form class="formRegister" id="formCreacionCV001" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <br /><label for="nombre"><strong style="color: red;">*</strong>Nombre/s</label>
+        <input
+          [(ngModel)]="usuario.nombre"
+          placeholder="ej. Juan Carlos"
+          type="text"
+          name="nombre"
+          id="ADVICE001"
+          required
+        />
+        <br /><label for="apellido"><strong style="color: red;">*</strong>Apellido/s</label>
+        <input
+          [(ngModel)]="usuario.apellido"
+          type="text"
+          name="apellido"
+          placeholder="ej. Pérez Días"
+          id="ADVICE001"
+          required
+        />
+        <br /><label for="dni"><strong style="color: red;">*</strong>D.N.I. (sin puntos, ni espacios)</label>
+        <input
+          [(ngModel)]="usuario.dni"
+          type="number"
+          name="dni"
+          id="CVCREATE-001"
+          oninput="this.value = this.value.slice(0, 8)"
+          required
+        />
+
+        <div id="errorText" style="color: red; display: none;">Ingrese al menos 5 dígitos.</div>
+
+        <br /><label for="edad"><strong style="color: red;">*</strong>Fecha de Nacimiento</label>
+        <input
+          [(ngModel)]="usuario.fechanacimiento"
+          type="date"
+          name="FechaNacimiento"
+          class="Input"
+          max="2007-01-01"
+          id="ADVICE001"
+          required
+        />
+
+        <br /><label for="sexo"><strong style="color: red;">*</strong>Género</label>
+        <select
+          class="genero"
+          [(ngModel)]="usuario.genero"
+          name="genero"
+          id="ADVICE001"
+          required
+        >
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Neutral">Prefiero No Responder</option>
+        </select>
+
+        <br /><label for="nombre"><strong style="color: red;">*</strong>Estado Civil</label>
+        <select name="estadocivil" id="ADVICE001" [(ngModel)]="usuario.estadocivil">
+          <option value="Soltero/a">Soltero/a</option>
+          <option value="Casado/a">Casado/a</option>
+        </select>
+
+        <br /><label for="disponibilidad"><strong style="color: red;">*</strong>Disponibilidad Horaria</label>
+        <select
+          class="disponibilidad"
+          [(ngModel)]="usuario.disponibilidadhoraria"
+          name="disponibilidad"
+          id="ADVICE001"
+        >
+          <option value="Tiempo Completo">Tiempo Completo</option>
+          <option value="Tiempo Parcial">Tiempo Parcial</option>
+          <option value="Horarios Flexibles">Horarios Flexibles</option>
+          <option value="Turnos Específicos">Turnos Específicos</option>
+        </select>
+
+        <br /><label for="telefono"><strong style="color: red;">*</strong>Teléfono</label>
+        <input
+          [(ngModel)]="usuario.telefono"
+          type="number"
+          name="telefono"
+          class="Input"
+          placeholder="ej. 3837999999"
+          id="ADVICE001"
+          required
+        />
+
+        <br /><label for="email"><strong style="color: red;">*</strong>E-mail</label>
+        <input
+          [(ngModel)]="usuario.email"
+          type="email"
+          name="email"
+          class="Input"
+          placeholder="nombre@ejemplo.com"
+          id="ADVICE001"
+          required
+        />
+
+        <br /><label for="residencia"><strong style="color: red;">*</strong>Lugar de Residencia Actual</label>
+        <select name="residencia" id="ADVICE001" [(ngModel)]="usuario.residencia" required>
+          <option value="Capital Departamental Tinogasta">
+            Capital Departamental Tinogasta
+          </option>
+          
+          <option value="Fiambalá">Fiambalá</option>
+          <option value="La Puntilla">La Puntilla</option>
+          <option value="Copacabana">Copacabana</option>
+          <option value="Banda de Lucero">Banda de Lucero</option>
+          <option value="El Salado">El Salado</option>
+          <option value="Santa Rosa">Santa Rosa</option>
+          <option value="El Puesto">El Puesto</option>
+          <option value="Villa San Rosa">Villa San Rosa</option>
+          <option value="San José">San José</option>
+          <option value="Anillaco">Anillaco</option>
+          <option value="El Pueblito">El Pueblito</option>
+          <option value="Costa de Reyes">Costa de Reyes</option>
+          <option value="Villa Luján">Villa Luján</option>
+        </select>
+        <br /><label for="domicilio"><strong style="color: red;">*</strong>Domicilio</label>
+        <input
+          [(ngModel)]="usuario.domicilio"
+          placeholder="ej. Barrio Jardín, Casa No. X"
+          type="text"
+          name="domicilio"
+          id="ADVICE001"
+          required
+        />
+      </form>
+    </div>
+    <div class="VentanaRegistro">
+      <div class="RegisterTittle">
+        <h1>Datos Académicos [2/5]</h1>
+      </div>
+      <form class="formRegister" id="formCreacionCV001" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <p class="Sugest">Los campos sin (<strong style="color: red;">*</strong>) no son obligatorios. Puedes dejar en blanco sengún corresponda.</p>
+        <br /><label for="niveleducacion"><strong style="color: red;">*</strong>Nivel de Educación Alcanzado</label>
+        <select name="niveleducacion" id="ADVICE001" [(ngModel)]="usuario.niveleducacion" required>
+          <option value="Educación Primaria Incompleta">
+            Educación Primaria Incompleta
+          </option>
+          <option value="Educación Primaria Completa">
+            Educación Primaria Completa
+          </option>
+          <option value="Educación Secundaria Incompleta">
+            Educación Secundaria Incompleta
+          </option>
+          <option value="Educación Secundaria Completa">
+            Educación Secundaria Completa
+          </option>
+          <option value="Formación Profesional Superior Incompleta">
+            Formación Profesional Superior Incompleta
+          </option>
+          <option value="Formación Profesional Superior Completa">
+            Formación Profesional Superior Completa
+          </option>
+          <option value="Título Universitario Incompleto">
+            Título Universitario Incompleto
+          </option>
+          <option value="Título Universitario Completo">
+            Título Universitario Completo
+          </option>
+        </select>
+        <br /><label for="titulosecundario">Título/s de Educación Secundaria</label>
+        <input
+          [(ngModel)]="usuario.titulosecundario"
+          type="text"
+          name="titulosecundario"
+          class="Input"
+          placeholder="ej. Técnico Agrónomo"
+        />
+
+        <br /><label for="institucionsecundaria"
+          >Institución de Formación Secundaria</label
+        >
+        <input
+          [(ngModel)]="usuario.institucionsecundaria"
+          type="text"
+          name="institucionsecundaria"
+          placeholder="ej. Esc. N° 15"
+          class="Input"
+        />
+        <br><label for="secundariaFechaFin">Año de Egreso de Estudios de Secundaria</label>
+        <input type="number" min="1900" max="2050" name="secundariaFechaFin" [(ngModel)]="usuario.fechafinsecundaria" placeholder="ej. 2010">
+        <br>
+        <br /><label for="titulosuperior">Título/s Superiores o Universitarios</label>
+        <input
+          [(ngModel)]="usuario.titulosuperior"
+          type="text"
+          name="titulosuperior"
+          class="Input"
+          placeholder="ej. Téc. Superior en Turismo"
+        />
+
+        <br /><label for="institucionsuperior"
+          >Institución/es de Formación Superior/Universitaria</label
+        >
+        <input
+          [(ngModel)]="usuario.institucionsuperior"
+          type="text"
+          name="institucionsuperior"
+          class="Input"
+          placeholder="ej. U.T.N."
+        />
+        <br><label for="UniversidadFechaFin">Año de Egreso de Terciario/Universidad</label>
+        <input type="number" min="1900" max="2050" name="UniversidadFechaFin" [(ngModel)]="usuario.fechafinuniversidad" placeholder="ej. 2018">
+        <br>
+        <br /><label for="cursos">Cursos/Especialidades<br /></label>
+        <textarea
+          [(ngModel)]="usuario.especialidades"
+          name="cursos"
+          class="resumen"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <br /><label for="Idiomas"><strong style="color: red;">*</strong>Segundo Idioma</label>
+        <select id="ADVICE001" name="Idiomas" [(ngModel)]="usuario.idiomas" required>
+          <option value="Sin Idiomas">Sin Idiomas</option>
+          <option value="Inglés">Inglés</option>
+          <option value="Portugués">Portugués</option>
+          <option value="Chino Tradicional">Chino Tradicional</option>
+          <option value="Chino Mandarín">Chino Mandarín</option>
+          <option value="Alemán">Alemán</option>
+          <option value="Francés">Francés</option>
+          <option value="Italiano">Italiano</option>
+        </select>
+
+        <label for="nivelidioma"><strong style="color: red;">*</strong>Nivel de Dominio</label>
+        <select id="ADVICE001" name="nivelidioma" [(ngModel)]="usuario.nivelidioma" required>
+          <option value="sinidioma">Sin Nivel</option>
+          <option value="A1 - Principiante">A1 - Principiante</option>
+          <option value="A2 - Básico">A2 - Básico</option>
+          <option value="B1 - Intermedio">B1 - Intermedio</option>
+          <option value="B2 - Intermedio-Avanzado">
+            B2 - Intermedio-Avanzado
+          </option>
+          <option value="C1 - Muy Avanzado">C1 - Muy Avanzado</option>
+          <option value="C2 - Experto">C2 - Experto</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="RegisterContainer3">
+    <div class="VentanaRegistroExpLab">
+      <div class="RegisterTittle"><h1>Historial Laboral [3/5]</h1></div>
+      <form
+        class="formRegisterLab"
+        (ngSubmit)="onSubmit()"
+        #registerForm="ngForm" id="formCreacionCV001" 
+      >
+        <fieldset id="ExperienciaLab1">
+          <legend>Experiencia Laboral 1</legend>
+          <label for="empresa1">Empresa:</label>
+          <input [(ngModel)]="usuario.empresa1" type="text" placeholder="ej. Liex S.A." name="empresa1" />
+          <br />
+          <label for="descripcion1">Descripción</label>
+          <textarea
+            [(ngModel)]="usuario.descripcion1"
+            name="descripcion1"
+            class="resumen"
+            cols="30"
+            rows="5"
+            maxlength="255"
+            placeholder="ej. Como Gerente de Ventas, supervisaba un equipo de diez representantes, estableciendo objetivos mensuales y anuales."
+          ></textarea>
+
+          <label for="fecha_inicio1">Fecha de Inicio:</label>
+          <input
+            [(ngModel)]="usuario.fechainicio1"
+            type="month"
+            name="fecha_inicio1"
+            id="FechaLimiteHoyInputForm"
+          />
+          <br />
+          <label for="fecha_fin1">Fecha de Fin:</label>
+          <input
+            [(ngModel)]="usuario.fechafin1"
+            type="month"
+            name="fecha_fin1"
+            id="FechaLimiteHoyInputForm"
+          />
+        </fieldset>
+
+        <fieldset id="ExperienciaLab2">
+          <legend>Experiencia Laboral 2</legend>
+          <label for="empresa2">Empresa:</label>
+          <input [(ngModel)]="usuario.empresa2" type="text" name="empresa2" />
+          <br />
+          <label for="descripcion1">Descripción</label>
+          <textarea
+            [(ngModel)]="usuario.descripcion2"
+            name="descripcion2"
+            class="resumen"
+            cols="30"
+            rows="5"
+            maxlength="255"
+            placeholder="ej. Como Gerente de Ventas, supervisaba un equipo de diez representantes, estableciendo objetivos mensuales y anuales."
+          ></textarea>
+
+          <label for="fecha_inicio2">Fecha de Inicio:</label>
+          <input
+            [(ngModel)]="usuario.fechainicio2"
+            type="month"
+            name="fecha_inicio2"
+            id="FechaLimiteHoyInputForm"
+          />
+          <br />
+          <label for="fecha_fin2">Fecha de Fin:</label>
+          <input
+            [(ngModel)]="usuario.fechafin2"
+            type="month"
+            name="fecha_fin2"
+            id="FechaLimiteHoyInputForm"
+          />
+        </fieldset>
+
+        <fieldset id="ExperienciaLab3">
+          <legend>Experiencia Laboral 3</legend>
+          <label for="empresa3">Empresa:</label>
+          <input [(ngModel)]="usuario.empresa3" type="text" name="empresa3" />
+          <br />
+          <label for="descripcion3">Descripción</label>
+          <textarea
+            [(ngModel)]="usuario.descripcion3"
+            name="descripcion3"
+            class="resumen"
+            cols="30"
+            rows="5"
+            maxlength="255"
+            placeholder="ej. Como Gerente de Ventas, supervisaba un equipo de diez representantes, estableciendo objetivos mensuales y anuales."
+          ></textarea>
+
+          <label for="fecha_inicio3">Fecha de Inicio:</label>
+          <input
+            [(ngModel)]="usuario.fechainicio3"
+            type="month"
+            name="fecha_inicio3"
+            id="FechaLimiteHoyInputForm"
+          />
+          <br />
+          <label for="fecha_fin3">Fecha de Fin:</label>
+          <input
+            [(ngModel)]="usuario.fechafin3"
+            type="month"
+            name="fecha_fin3"
+            id="FechaLimiteHoyInputForm"
+          />
+        </fieldset>
+
+
+        <button
+          onclick="AgegarExperiencia()"
+          class="AgregarExpBtn"
+          type="button"
+        >
+          Agregar Experiencia Laboral (Max: 3) (Opcional)
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="RegisterContainer4">
+    <div class="VentanaRegistro">
+      <div class="RegisterTittle">
+        <h1>Skills o Habilidades [4/5]</h1>
+      </div>
+      <form class="formRegister" id="formCreacionCV001" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <p class="Sugest">Selecciona las Habilidades Blandas y Técnicas con las que te sientes identificada/o. (Máx: 10)</p>
+        <br /><label for="HabilidadesBlandas">Habilidades Blandas</label>
+        <select name="HabilidadesBlandas" [(ngModel)]="usuario.habilidadblanda1">
+          <option value="Comunicación efectiva">Comunicación efectiva</option>
+          <option value="Trabajo en equipo">Trabajo en equipo</option>
+          <option value="Organización">Organización</option>
+          <option value="Resolución de problemas">Resolución de problemas</option>
+          <option value="Creatividad">Creatividad</option>
+          <option value="Liderazgo">Liderazgo</option>
+          <option value="Adaptabilidad">Adaptabilidad</option>
+          <option value="Pensamiento crítico">Pensamiento crítico</option>
+          <option value="Toma de decisiones">Toma de decisiones</option>
+          <option value="Gestión del tiempo">Gestión del tiempo</option>
+          <option value="Empatía">Empatía</option>
+          <option value="Colaboración">Colaboración</option>
+          <option value="Orientación al cliente">Orientación al cliente</option>
+          <option value="Trabajo bajo presión">Trabajo bajo presión</option>
+          <option value="Iniciativa">Iniciativa</option>
+          <option value="Flexibilidad">Flexibilidad</option>
+          <option value="Innovación">Innovación</option>
+          <option value="Negociación">Negociación</option>
+          <option value="Habilidades interpersonales">Habilidades interpersonales</option>
+          <option value="Gestión de conflictos">Gestión de conflictos</option>
+          <option value="Planificación estratégica">Planificación estratégica</option>
+          <option value="Presentaciones efectivas">Presentaciones efectivas</option>
+          <option value="Atención al detalle">Atención al detalle</option>
+          <option value="Liderazgo de equipos">Liderazgo de equipos</option>
+          <option value="Adaptación al cambio">Adaptación al cambio</option>
+        </select>
+        <br>
+        <select name="HabilidadesBlandas" [(ngModel)]="usuario.habilidadblanda2">
+          <option value="Comunicación efectiva">Comunicación efectiva</option>
+          <option value="Trabajo en equipo">Trabajo en equipo</option>
+          <option value="Organización">Organización</option>
+          <option value="Resolución de problemas">Resolución de problemas</option>
+          <option value="Creatividad">Creatividad</option>
+          <option value="Liderazgo">Liderazgo</option>
+          <option value="Adaptabilidad">Adaptabilidad</option>
+          <option value="Pensamiento crítico">Pensamiento crítico</option>
+          <option value="Toma de decisiones">Toma de decisiones</option>
+          <option value="Gestión del tiempo">Gestión del tiempo</option>
+          <option value="Empatía">Empatía</option>
+          <option value="Colaboración">Colaboración</option>
+          <option value="Orientación al cliente">Orientación al cliente</option>
+          <option value="Trabajo bajo presión">Trabajo bajo presión</option>
+          <option value="Iniciativa">Iniciativa</option>
+          <option value="Flexibilidad">Flexibilidad</option>
+          <option value="Innovación">Innovación</option>
+          <option value="Negociación">Negociación</option>
+          <option value="Habilidades interpersonales">Habilidades interpersonales</option>
+          <option value="Gestión de conflictos">Gestión de conflictos</option>
+          <option value="Planificación estratégica">Planificación estratégica</option>
+          <option value="Presentaciones efectivas">Presentaciones efectivas</option>
+          <option value="Atención al detalle">Atención al detalle</option>
+          <option value="Liderazgo de equipos">Liderazgo de equipos</option>
+          <option value="Adaptación al cambio">Adaptación al cambio</option>
+        </select>
+        <br>
+        <select name="HabilidadesBlandas" [(ngModel)]="usuario.habilidadblanda3">
+          <option value="Comunicación efectiva">Comunicación efectiva</option>
+          <option value="Trabajo en equipo">Trabajo en equipo</option>
+          <option value="Organización">Organización</option>
+          <option value="Resolución de problemas">Resolución de problemas</option>
+          <option value="Creatividad">Creatividad</option>
+          <option value="Liderazgo">Liderazgo</option>
+          <option value="Adaptabilidad">Adaptabilidad</option>
+          <option value="Pensamiento crítico">Pensamiento crítico</option>
+          <option value="Toma de decisiones">Toma de decisiones</option>
+          <option value="Gestión del tiempo">Gestión del tiempo</option>
+          <option value="Empatía">Empatía</option>
+          <option value="Colaboración">Colaboración</option>
+          <option value="Orientación al cliente">Orientación al cliente</option>
+          <option value="Trabajo bajo presión">Trabajo bajo presión</option>
+          <option value="Iniciativa">Iniciativa</option>
+          <option value="Flexibilidad">Flexibilidad</option>
+          <option value="Innovación">Innovación</option>
+          <option value="Negociación">Negociación</option>
+          <option value="Habilidades interpersonales">Habilidades interpersonales</option>
+          <option value="Gestión de conflictos">Gestión de conflictos</option>
+          <option value="Planificación estratégica">Planificación estratégica</option>
+          <option value="Presentaciones efectivas">Presentaciones efectivas</option>
+          <option value="Atención al detalle">Atención al detalle</option>
+          <option value="Liderazgo de equipos">Liderazgo de equipos</option>
+          <option value="Adaptación al cambio">Adaptación al cambio</option>
+        </select>
+        <br>
+        <select name="HabilidadesBlandas" [(ngModel)]="usuario.habilidadblanda4">
+          <option value="Comunicación efectiva">Comunicación efectiva</option>
+          <option value="Trabajo en equipo">Trabajo en equipo</option>
+          <option value="Organización">Organización</option>
+          <option value="Resolución de problemas">Resolución de problemas</option>
+          <option value="Creatividad">Creatividad</option>
+          <option value="Liderazgo">Liderazgo</option>
+          <option value="Adaptabilidad">Adaptabilidad</option>
+          <option value="Pensamiento crítico">Pensamiento crítico</option>
+          <option value="Toma de decisiones">Toma de decisiones</option>
+          <option value="Gestión del tiempo">Gestión del tiempo</option>
+          <option value="Empatía">Empatía</option>
+          <option value="Colaboración">Colaboración</option>
+          <option value="Orientación al cliente">Orientación al cliente</option>
+          <option value="Trabajo bajo presión">Trabajo bajo presión</option>
+          <option value="Iniciativa">Iniciativa</option>
+          <option value="Flexibilidad">Flexibilidad</option>
+          <option value="Innovación">Innovación</option>
+          <option value="Negociación">Negociación</option>
+          <option value="Habilidades interpersonales">Habilidades interpersonales</option>
+          <option value="Gestión de conflictos">Gestión de conflictos</option>
+          <option value="Planificación estratégica">Planificación estratégica</option>
+          <option value="Presentaciones efectivas">Presentaciones efectivas</option>
+          <option value="Atención al detalle">Atención al detalle</option>
+          <option value="Liderazgo de equipos">Liderazgo de equipos</option>
+          <option value="Adaptación al cambio">Adaptación al cambio</option>
+        </select>
+        <br>
+        <select name="HabilidadesBlandas" [(ngModel)]="usuario.habilidadblanda5">
+          <option value="Comunicación efectiva">Comunicación efectiva</option>
+          <option value="Trabajo en equipo">Trabajo en equipo</option>
+          <option value="Organización">Organización</option>
+          <option value="Resolución de problemas">Resolución de problemas</option>
+          <option value="Creatividad">Creatividad</option>
+          <option value="Liderazgo">Liderazgo</option>
+          <option value="Adaptabilidad">Adaptabilidad</option>
+          <option value="Pensamiento crítico">Pensamiento crítico</option>
+          <option value="Toma de decisiones">Toma de decisiones</option>
+          <option value="Gestión del tiempo">Gestión del tiempo</option>
+          <option value="Empatía">Empatía</option>
+          <option value="Colaboración">Colaboración</option>
+          <option value="Orientación al cliente">Orientación al cliente</option>
+          <option value="Trabajo bajo presión">Trabajo bajo presión</option>
+          <option value="Iniciativa">Iniciativa</option>
+          <option value="Flexibilidad">Flexibilidad</option>
+          <option value="Innovación">Innovación</option>
+          <option value="Negociación">Negociación</option>
+          <option value="Habilidades interpersonales">Habilidades interpersonales</option>
+          <option value="Gestión de conflictos">Gestión de conflictos</option>
+          <option value="Planificación estratégica">Planificación estratégica</option>
+          <option value="Presentaciones efectivas">Presentaciones efectivas</option>
+          <option value="Atención al detalle">Atención al detalle</option>
+          <option value="Liderazgo de equipos">Liderazgo de equipos</option>
+          <option value="Adaptación al cambio">Adaptación al cambio</option>
+        </select>
+
+          <br /><label for="HabilidadesTecnicas">Habilidades Técnicas</label>
+          <select name="HabilidadesTecnicas" [(ngModel)]="usuario.habilidadtecnica1">
+            <option value="Programación">Programación</option>
+            <option value="Diseño gráfico">Diseño gráfico</option>
+            <option value="Análisis de datos">Análisis de datos</option>
+            <option value="Desarrollo web">Desarrollo web</option>
+            <option value="Marketing digital">Marketing digital</option>
+            <option value="Redes sociales">Redes sociales</option>
+            <option value="Administración de bases de datos">Administración de bases de datos</option>
+            <option value="Gestión de proyectos">Gestión de proyectos</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Ingeniería de software">Ingeniería de software</option>
+            <option value="Desarrollo de aplicaciones móviles">Desarrollo de aplicaciones móviles</option>
+            <option value="Marketing en línea">Marketing en línea</option>
+            <option value="Diseño de experiencia de usuario (UX/UI)">Diseño de experiencia de usuario (UX/UI)</option>
+            <option value="Administración de sistemas">Administración de sistemas</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Ingeniería eléctrica">Ingeniería eléctrica</option>
+            <option value="Gestión de calidad">Gestión de calidad</option>
+            <option value="Análisis financiero">Análisis financiero</option>
+            <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+            <option value="Desarrollo de negocios">Desarrollo de negocios</option>
+            <option value="Gestión de inventario">Gestión de inventario</option>
+            <option value="Diseño de productos">Diseño de productos</option>
+            <option value="Investigación de mercado">Investigación de mercado</option>
+            <option value="Análisis de riesgos">Análisis de riesgos</option>
+            <option value="Seguridad informática">Seguridad informática</option>
+          </select>
+          <br>
+          <select name="HabilidadesTecnicas" [(ngModel)]="usuario.habilidadtecnica2">
+            <option value="Programación">Programación</option>
+            <option value="Diseño gráfico">Diseño gráfico</option>
+            <option value="Análisis de datos">Análisis de datos</option>
+            <option value="Desarrollo web">Desarrollo web</option>
+            <option value="Marketing digital">Marketing digital</option>
+            <option value="Redes sociales">Redes sociales</option>
+            <option value="Administración de bases de datos">Administración de bases de datos</option>
+            <option value="Gestión de proyectos">Gestión de proyectos</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Ingeniería de software">Ingeniería de software</option>
+            <option value="Desarrollo de aplicaciones móviles">Desarrollo de aplicaciones móviles</option>
+            <option value="Marketing en línea">Marketing en línea</option>
+            <option value="Diseño de experiencia de usuario (UX/UI)">Diseño de experiencia de usuario (UX/UI)</option>
+            <option value="Administración de sistemas">Administración de sistemas</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Ingeniería eléctrica">Ingeniería eléctrica</option>
+            <option value="Gestión de calidad">Gestión de calidad</option>
+            <option value="Análisis financiero">Análisis financiero</option>
+            <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+            <option value="Desarrollo de negocios">Desarrollo de negocios</option>
+            <option value="Gestión de inventario">Gestión de inventario</option>
+            <option value="Diseño de productos">Diseño de productos</option>
+            <option value="Investigación de mercado">Investigación de mercado</option>
+            <option value="Análisis de riesgos">Análisis de riesgos</option>
+            <option value="Seguridad informática">Seguridad informática</option>
+          </select>
+
+          <br>
+          <select name="HabilidadesTecnicas" [(ngModel)]="usuario.habilidadtecnica3">
+            <option value="Programación">Programación</option>
+            <option value="Diseño gráfico">Diseño gráfico</option>
+            <option value="Análisis de datos">Análisis de datos</option>
+            <option value="Desarrollo web">Desarrollo web</option>
+            <option value="Marketing digital">Marketing digital</option>
+            <option value="Redes sociales">Redes sociales</option>
+            <option value="Administración de bases de datos">Administración de bases de datos</option>
+            <option value="Gestión de proyectos">Gestión de proyectos</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Ingeniería de software">Ingeniería de software</option>
+            <option value="Desarrollo de aplicaciones móviles">Desarrollo de aplicaciones móviles</option>
+            <option value="Marketing en línea">Marketing en línea</option>
+            <option value="Diseño de experiencia de usuario (UX/UI)">Diseño de experiencia de usuario (UX/UI)</option>
+            <option value="Administración de sistemas">Administración de sistemas</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Ingeniería eléctrica">Ingeniería eléctrica</option>
+            <option value="Gestión de calidad">Gestión de calidad</option>
+            <option value="Análisis financiero">Análisis financiero</option>
+            <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+            <option value="Desarrollo de negocios">Desarrollo de negocios</option>
+            <option value="Gestión de inventario">Gestión de inventario</option>
+            <option value="Diseño de productos">Diseño de productos</option>
+            <option value="Investigación de mercado">Investigación de mercado</option>
+            <option value="Análisis de riesgos">Análisis de riesgos</option>
+            <option value="Seguridad informática">Seguridad informática</option>
+          </select>
+
+                    <br>
+          <select name="HabilidadesTecnicas" [(ngModel)]="usuario.habilidadtecnica4">
+            <option value="Programación">Programación</option>
+            <option value="Diseño gráfico">Diseño gráfico</option>
+            <option value="Análisis de datos">Análisis de datos</option>
+            <option value="Desarrollo web">Desarrollo web</option>
+            <option value="Marketing digital">Marketing digital</option>
+            <option value="Redes sociales">Redes sociales</option>
+            <option value="Administración de bases de datos">Administración de bases de datos</option>
+            <option value="Gestión de proyectos">Gestión de proyectos</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Ingeniería de software">Ingeniería de software</option>
+            <option value="Desarrollo de aplicaciones móviles">Desarrollo de aplicaciones móviles</option>
+            <option value="Marketing en línea">Marketing en línea</option>
+            <option value="Diseño de experiencia de usuario (UX/UI)">Diseño de experiencia de usuario (UX/UI)</option>
+            <option value="Administración de sistemas">Administración de sistemas</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Ingeniería eléctrica">Ingeniería eléctrica</option>
+            <option value="Gestión de calidad">Gestión de calidad</option>
+            <option value="Análisis financiero">Análisis financiero</option>
+            <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+            <option value="Desarrollo de negocios">Desarrollo de negocios</option>
+            <option value="Gestión de inventario">Gestión de inventario</option>
+            <option value="Diseño de productos">Diseño de productos</option>
+            <option value="Investigación de mercado">Investigación de mercado</option>
+            <option value="Análisis de riesgos">Análisis de riesgos</option>
+            <option value="Seguridad informática">Seguridad informática</option>
+          </select>
+
+          <br>
+          <select name="HabilidadesTecnicas" [(ngModel)]="usuario.habilidadtecnica5">
+            <option value="Programación">Programación</option>
+            <option value="Diseño gráfico">Diseño gráfico</option>
+            <option value="Análisis de datos">Análisis de datos</option>
+            <option value="Desarrollo web">Desarrollo web</option>
+            <option value="Marketing digital">Marketing digital</option>
+            <option value="Redes sociales">Redes sociales</option>
+            <option value="Administración de bases de datos">Administración de bases de datos</option>
+            <option value="Gestión de proyectos">Gestión de proyectos</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Ingeniería de software">Ingeniería de software</option>
+            <option value="Desarrollo de aplicaciones móviles">Desarrollo de aplicaciones móviles</option>
+            <option value="Marketing en línea">Marketing en línea</option>
+            <option value="Diseño de experiencia de usuario (UX/UI)">Diseño de experiencia de usuario (UX/UI)</option>
+            <option value="Administración de sistemas">Administración de sistemas</option>
+            <option value="Soporte técnico">Soporte técnico</option>
+            <option value="Ingeniería eléctrica">Ingeniería eléctrica</option>
+            <option value="Gestión de calidad">Gestión de calidad</option>
+            <option value="Análisis financiero">Análisis financiero</option>
+            <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+            <option value="Desarrollo de negocios">Desarrollo de negocios</option>
+            <option value="Gestión de inventario">Gestión de inventario</option>
+            <option value="Diseño de productos">Diseño de productos</option>
+            <option value="Investigación de mercado">Investigación de mercado</option>
+            <option value="Análisis de riesgos">Análisis de riesgos</option>
+            <option value="Seguridad informática">Seguridad informática</option>
+          </select>
+          
+
+      </form>
+    </div>
+    <div class="VentanaRegistro">
+      <div class="RegisterTittle">
+        <h1>Otros Datos de Interés [5/5]</h1>
+      </div>
+      <form  class="formRegister" id="formCreacionCV001" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <br /><label for="Carnet"><strong style="color: red;">*</strong>Carnet de Conducir</label>
+        
+        <select id="ADVICE001" name="carnet" [(ngModel)]="usuario.carnet" required>
+          <option value="Sin Carnet de Conducir">Sin Carnet de Conducir</option>
+          <option value="Carnet de Conducir - Hasta Motocicletas">
+            Carnet de Conducir - Hasta Motocicletas
+          </option>
+          <option value="Carnet de Conducir - Hasta Automóviles">
+            Carnet de Conducir - Hasta Automóviles
+          </option>
+          <option value="Carnet de Conducir - Hasta Camiones">
+            Carnet de Conducir - Hasta Camiones
+          </option>
+        </select>
+
+        <br /><label for="Carnet"><strong style="color: red;">*</strong>Disponibilidad para Viajar</label>
+        <select id="ADVICE001" name="carnet" [(ngModel)]="usuario.dispviajar" required>
+          <option value="No">No</option>
+          <option value="Sí">Sí</option>
+        </select>
+
+        <br /><label for="MiResumen"
+          ><strong><strong style="color: red;">*</strong>Resumen de Mí</strong><br />(Haz un resumen de tí de no más
+          de 500 carácteres. Se mostrará como portada de tu CV)</label
+        >
+        <textarea
+          [(ngModel)]="usuario.miresumen"
+          required
+          id="ADVICE001"
+          name="MiResumen"
+          class="resumen"
+          cols="30"
+          rows="10"
+          maxlength="500"
+          placeholder="ej. Experto en marketing digital con historial comprobado en estrategias SEO y gestión de redes sociales. Creativo en la generación de contenido y enfocado en resultados medibles. Habilidades analíticas sólidas para optimizar campañas. Apasionado por mantenerse al día con las tendencias del mercado y adaptarse a los cambios rápidamente."
+        ></textarea>
+
+        <br /><label for="empresa">Anexar CV PDF</label>
+        <input type="file" name="empresa" class="Input" />
+        
+        <div class="Advice">
+          <p><strong>¡Advertencia!</strong></p>
+          <p>
+            <strong>Revisa que todo esté bien antes de Crear y publicar
+              <br><br>Debes Validar el Formulario antes
+            </strong>
+          </p>
+        </div>
+        <div class="CajaRegisterBtn">
+          <button class="RegisterBtn" type="button" id="formCreacionCV001" onclick="ValidarFormularioCV(), fechaDeCargaAutomatica()">
+            Validar Formulario
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

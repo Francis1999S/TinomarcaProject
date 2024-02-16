@@ -1,0 +1,48 @@
+.Resultados {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(54, 54, 54);
+    background: linear-gradient(
+      90deg,
+      rgb(53, 53, 53) 0%,
+      rgb(63, 63, 63) 50%,
+      rgb(73, 73, 73) 100%
+    );
+}
+.VentanaResultado {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+    border: 1px solid rgb(172, 172, 172);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(21, 97, 172);
+    background: linear-gradient(
+      90deg,
+      rgba(21, 97, 172, 1) 0%,
+      rgba(25, 118, 210, 1) 50%,
+      rgba(52, 146, 238, 1) 100%
+    );
+    color: white;
+    h1 {
+        text-align: center;
+        margin: 0;
+        width: 80%;
+        font-size: 2vw;
+    }
+    p {
+        text-align: center;
+        font-size: 1.2vw;
+    }
+  }

@@ -1,0 +1,26 @@
+<app-header></app-header>
+<body>
+  <div class="VentanaInicioSesion">
+    <div class="LoginTittle">
+      <h1>Creación y Publicación de CV</h1>
+      <P>Por favor, a continuación, ingresá tu D.N.I.</P>
+    </div>
+    <form class="formLogin" (ngSubmit)="verificarDNI()">
+      <div class="DNI">
+        <label for="D.N.I.">D.N.I. (Sin puntos, ni espacios.)</label>
+        <input [(ngModel)]="dni" type="number" name="D.N.I." id="D.N.I." oninput="this.value = this.value.slice(0, 8)" required />
+      <p id="LegendDNIError" style="color: rgb(255, 100, 100);background-color: black; width: 100%; text-align: center; padding: 1%;"></p>
+      </div>
+      <div class="ValidateBtn">
+        <button type="submit" onclick="ValidarDNI()" class="LoginBtn">Validar D.N.I.</button>
+      </div>
+      <div id="MensajeDNIenBBDD">
+        <p *ngIf="mensaje" >{{ mensaje }}</p>
+      </div>
+      <div class="Registrarse">
+        <button id="ContinueCreateCVBtn" class="RegisterBtn" (click)="navigateToRegister()">Continuar al formulario</button>
+      </div>
+    </form>
+  </div>
+</body>
+<app-footer></app-footer>

@@ -1,13 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>TinomarcaProject</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="utf-8" />
+  <title>Tinomarca</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" />
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+<script>
+
+window.onload = GoStart();
+
+  function GoContacto() {
+    window.scrollTo({
+      top: 10000,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+  function GoStart() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+
+  function AgegarExperiencia() {
+    var ExperienciaLab1 = document.getElementById("ExperienciaLab1");
+    var ExperienciaLab2 = document.getElementById("ExperienciaLab2");
+    var ExperienciaLab3 = document.getElementById("ExperienciaLab3");
+
+    console.log("funcion AgregarExperiencia ejecutada...");
+
+    if (
+      window.getComputedStyle(ExperienciaLab1).getPropertyValue("display") ===
+      "none"
+    ) {
+      ExperienciaLab1.style.display = "flex";
+    } else if (
+      window.getComputedStyle(ExperienciaLab2).getPropertyValue("display") ===
+      "none"
+    ) {
+      ExperienciaLab2.style.display = "flex";
+    } else if (
+      window.getComputedStyle(ExperienciaLab3).getPropertyValue("display") ===
+      "none"
+    ) {
+      ExperienciaLab3.style.display = "flex";
+    }
+  }
+
+
+  // Obtener la fecha actual en el formato requerido (YYYY-MM)
+  var fechaActual00001 = new Date().toISOString().split('T')[0].slice(0, 7);
+
+  // Establecer el atributo max del campo de entrada de mes
+  document.getElementById('FechaLimiteHoyInputForm').setAttribute('max', fechaActual00001);
+
+  // -------------------Función de Cierre de Ventana Error-------------
+  function CerrarVentanaError() {
+    var VentanaError = document.getElementById('VentanaErrorCVCreate');
+    VentanaError.style.zIndex = -5;
+    VentanaError.style.top = '-100%';
+  }
+  // -----------------AVISO DE CAMPOS INCORRECTOS--------------
+  var BanderaValidacionFormulario = false;
+
+  function ValidarFormularioCV() {
+    var ErrorMensajeCV = document.getElementById('ErrorMensajeCV');
+    var ErrorMensajeCV2 = document.getElementById('ErrorMensajeCV2');
+    var VentanaError = document.getElementById('VentanaErrorCVCreate');
+    var inputValueRequired = document.querySelectorAll('#ADVICE001');
+    var inputValue = document.getElementById('CVCREATE-001').value;
+var TituloError = document.getElementById('TittleErrorWindowCVCreate');
+var ErrorSugest = document.getElementById('ErrorSugestCVCreate');
+var BotonFinalCrearCV = document.getElementById('RegisterBtnFinal');    
+
+var todosLlenos = true;
+
+    inputValueRequired.forEach(function (inputValueX) {
+      if (inputValueX.value === '') {
+        todosLlenos = false;
+
+        return;
+      }
+    });
+
+    ErrorMensajeCV.innerHTML = '';
+    ErrorMensajeCV2.innerHTML = '';
+    TituloError.innerText = '¡El Formulario es Inválido!';
+    ErrorSugest.innerText = 'Por favor, asegúrese de que ha completado correctamente los campos marcados como Obligatorios (*).';
+    BotonFinalCrearCV.style.display = 'none';
+    VentanaError.style.backgroundColor = 'rgb(207, 0, 0)';
+
+    var cantidadDigitos = inputValue.length;
+
+    if (!todosLlenos || cantidadDigitos < 8) {
+      VentanaError.style.top = '50%';
+      VentanaError.style.zIndex = 1;
+      ErrorMensajeCV.innerText = '*Se han detectado campos obligatorios vacíos';
+      if (cantidadDigitos < 8 && !todosLlenos) {
+        ErrorMensajeCV.innerText = '*El D.N.I. que usted ha ingresado es Inválido';
+        ErrorMensajeCV2.innerText = '*Se han detectado campos obligatorios vacíos';
+      }
+      if (cantidadDigitos < 8) {
+        ErrorMensajeCV.innerText = '*El D.N.I. que usted ha ingresado es Inválido';
+      }
+    } else {
+      VentanaError.style.top = '50%';
+      VentanaError.style.zIndex = 1;
+      TituloError.innerText = '¡El Formulario es Válido!';
+      VentanaError.style.backgroundColor = 'rgb(29, 137, 209)';
+      ErrorSugest.innerText = ' ';
+      BotonFinalCrearCV.style.display = 'block';
+    }
+  }
+
+
+  // -----------------VALIDACIÓN DNI--------------
+  function ValidarDNI() {
+
+    var InputDNI = document.getElementById('D.N.I.').value;
+    var ErrorLegend = document.getElementById('LegendDNIError');
+    var MensajeDNI = document.getElementById('MensajeDNIenBBDD');
+    var CreateCVBtn = document.getElementById('ContinueCreateCVBtn');
+
+    if (InputDNI.length < 8 || InputDNI.length > 8 || InputDNI < 10000000 || InputDNI > 50000000) {
+ErrorLegend.style.opacity = '1';
+ErrorLegend.innerText = '*El D.N.I. es Inválido';
+      ErrorLegend.style.color = 'rgb(255, 100, 100)';
+      MensajeDNI.style.opacity = '0';
+      CreateCVBtn.style.display = 'none';
+    } else if (InputDNI.length === 8 && InputDNI > 10000000 && InputDNI < 50000000) {
+      ErrorLegend.style.opacity = '1';
+      ErrorLegend.innerText = '*¡El D.N.I. es Válido!';
+      ErrorLegend.style.color = 'green';
+      MensajeDNI.style.opacity = '1';
+      CreateCVBtn.style.display = 'flex';
+    }
+  }
+
+
+</script>
+
 </html>

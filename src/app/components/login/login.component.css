@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgb(53, 53, 53) 0%,
+    rgb(63, 63, 63) 50%,
+    rgb(73, 73, 73) 100%
+  );
+}
+.VentanaInicioSesion {
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  height: 70%;
+  border-radius: 5px;
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(21, 97, 172);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 97, 172, 1) 0%,
+    rgba(25, 118, 210, 1) 50%,
+    rgba(52, 146, 238, 1) 100%
+  );
+}
+.LoginTittle {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    font-size: 2vw;
+  }
+  p {
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    color: white;
+    border-top: 1px solid rgb(172, 172, 172);
+    border-bottom: 1px solid rgb(172, 172, 172);
+  }
+}
+.formLogin {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.DNI {
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  label {
+    color: white;
+    font-family: "Quicksand";
+  }
+}
+.ValidateBtn {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Registrarse {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RegisterBtn {
+  transition: 0.2s;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0,177,14);
+  background: linear-gradient(130deg, rgba(0,177,14,1) 0%, rgba(0,139,11,1) 50%, rgba(0,94,8,1) 100%);
+  border: 1px solid rgb(0, 47, 109);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  font-family: "Quicksand";
+  font-size: 1.5vw;
+  box-shadow: 1px 1px 5px rgb(63, 63, 63);
+  cursor: pointer;
+  font-weight: 600;
+}
+.RegisterBtn:hover {
+  transition: 0.2s;
+  border: 2px solid rgb(0, 90, 207);
+  scale: 1.05;
+  filter: brightness(120%);
+}
+input {
+  width: 100%;
+  height: 30%;
+  border-radius: 5px;
+  border: 1px solid rgb(172, 172, 172);
+  font-family: "Quicksand";
+  font-size: 1.2vw;
+  color: rgb(41, 41, 41);
+}
+input:focus {
+  transition: 0.2s;
+  outline: none;
+  border: 1px solid rgb(0, 47, 109);
+}
+
+.LoginBtn {
+  transition: 0.2s;
+  width: 70%;
+  height: 70%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgb(226, 226, 226) 0%,
+    rgb(240, 240, 240) 50%,
+    rgb(255, 255, 255) 100%
+  );
+  border: 1px solid rgb(0, 47, 109);
+  border-radius: 5px;
+  color: black;
+  font-family: "Quicksand";
+  font-size: 1.2vw;
+  box-shadow: 1px 1px 5px rgb(63, 63, 63);
+  cursor: pointer;
+}
+.LoginBtn:hover {
+  transition: 0.2s;
+  border: 1px solid rgb(0, 90, 207);
+  scale: 1.05;
+  filter: brightness(120%);
+}
+.LoginBtn:active {
+  transition: 0.1s;
+  border: 1px solid rgb(0, 90, 207);
+  scale: 0.9;
+  filter: brightness(50%);
+}
+#LegendDNIError {
+  transition: 0.2 ease-in-out;
+  opacity: 0;
+}
+#MensajeDNIenBBDD {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  width: 70%;
+  height: 15%;
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 5px;
+  background: rgb(21, 97, 172);
+  background: linear-gradient(
+    90deg,
+    rgb(172, 21, 21) 0%,
+    rgb(210, 25, 25) 50%,
+    rgb(238, 52, 52) 100%
+  );
+  box-shadow: 1px 1px 5px rgb(63, 63, 63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#ContinueCreateCVBtn {
+  display: none;
+}
