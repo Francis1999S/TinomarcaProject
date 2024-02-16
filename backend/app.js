@@ -11,21 +11,21 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// const connection = mysql.createConnection({
-//   host: "tinogasta.gob.ar",
-//   port: 21,
-//   user: "j8000542_cv",
-//   password: "01voMIgima",
-//   database: "j8000542_cv",
-// });
+ const connection = mysql.createConnection({
+   host: "tinogasta.gob.ar",
+    port: 21,
+   user: "j8000542_cv",
+   password: "01voMIgima",
+   database: "j8000542_cv",
+ });
 
 // Conexion de Prueba G2KHosting MariaDB
- const connection = mysql.createConnection({
-   host: "localhost",
-   user: "c19511_backend",
-   password: "NBK0y3fLTiZc",
-   database: "c19511_trabajo",
- });
+//  const connection = mysql.createConnection({
+//    host: "localhost",
+//    user: "c19511_backend",
+//    password: "NBK0y3fLTiZc",
+//    database: "c19511_trabajo",
+//  });
 
 connection.connect(); 
 

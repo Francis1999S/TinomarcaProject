@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  private apiUrl = 'https://francis-seura.ar:3000/backend/api/usuarios';
+  private apiUrl = 'https://tinogasta.gob.ar:3000/api/usuarios';
 
   constructor(private http: HttpClient) {}
 
